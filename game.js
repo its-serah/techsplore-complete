@@ -1,8 +1,6 @@
 // Game State
 const gameState = {
     playerName: '',
-    teamName: '',
-    teamNumber: '',
     difficulty: 'beginner',
     score: 0,
     lives: 3,
@@ -241,17 +239,13 @@ function setupEventListeners() {
 
 function validateUserInfo() {
     const playerName = document.getElementById('playerName').value.trim();
-    const teamName = document.getElementById('teamName').value.trim();
-    const teamNumber = document.getElementById('teamNumber').value.trim();
 
-    if (!playerName || !teamName || !teamNumber) {
-        alert('Please fill in all fields!');
+    if (!playerName) {
+        alert('Please enter your full name!');
         return false;
     }
 
     gameState.playerName = playerName;
-    gameState.teamName = teamName;
-    gameState.teamNumber = teamNumber;
     return true;
 }
 
@@ -327,7 +321,6 @@ function resizeCanvas() {
 function startGame() {
     // Update UI with player info
     document.getElementById('displayPlayerName').textContent = gameState.playerName;
-    document.getElementById('displayTeamInfo').textContent = `${gameState.teamName} #${gameState.teamNumber}`;
     
     // Apply background theme
     const gameScreen = document.getElementById('gameScreen');
