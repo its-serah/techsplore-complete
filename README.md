@@ -198,7 +198,9 @@ const QUESTION_CONFIG = {
 
 ## 🌐 Live Demo
 
-🎮 **Play the game**: Coming soon! (Set up GitHub Pages to get your live URL)
+🎮 **Play the game**: [https://its-serah.github.io/techsplore-complete/](https://its-serah.github.io/techsplore-complete/)
+
+> 🚀 **NEW!** This is the complete version with both Beginner and Advanced difficulty modes!
 
 ## 🆚 Comparison with Previous Version
 
