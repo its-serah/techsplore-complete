@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechSplore 2025 Hackathon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <div class="welcome-container">
+            <img src="assets/logo.jpg" alt="TechSplore Logo" class="game-logo">
+            <h1 class="game-title">Welcome to TechSplore 2025 Hackathon</h1>
+            
+            <div class="user-info">
+                <input type="text" id="playerName" placeholder="Enter your name" required>
+                <input type="text" id="teamName" placeholder="Enter team name" required>
+                <input type="number" id="teamNumber" placeholder="Enter team number" required>
+            </div>
+            
+            <div class="instructions">
+                <h3>How to Play:</h3>
+                <p>📌 Use arrow keys (← →) to move your character</p>
+                <p>🎯 Press SPACE to jump (double tap for double jump)</p>
+                <p>💨 Press SHIFT to dash forward</p>
+                <p>⭐ Collect stars to answer tech questions</p>
+                <p>💰 Collect coins for extra points</p>
+                <p>❤️ Avoid obstacles or you'll lose lives!</p>
+            </div>
+            
+            <div class="difficulty-buttons">
+                <button id="beginnerBtn" class="start-game-btn beginner-btn">🎮 Start Game for Beginners</button>
+                <button id="advancedBtn" class="start-game-btn advanced-btn">🚀 Advanced Challenge Mode</button>
+            </div>
+            
+            <div class="difficulty-info">
+                <div class="difficulty-details beginner-details">
+                    <h4>👶 Beginner Mode</h4>
+                    <p>• Easy tech questions</p>
+                    <p>• Slower game speed</p>
+                    <p>• Perfect for learning!</p>
+                </div>
+                <div class="difficulty-details advanced-details" style="display: none;">
+                    <h4>🔥 Advanced Mode</h4>
+                    <p>• Complex programming questions</p>
+                    <p>• Advanced algorithms & data structures</p>
+                    <p>• Higher points & faster gameplay</p>
+                    <p>• For experienced developers!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customization Screen -->
+    <div id="customizationScreen" class="screen">
+        <div class="customization-container">
+            <h2>Customize Your Experience</h2>
+            
+            <div class="customization-section">
+                <h3>Choose Your Character</h3>
+                <div class="character-options">
+                    <div class="character-option" data-character="astronaut">
+                        <div class="character-preview astronaut">
+                            <img src="assets/characters/taylor.png" alt="Taylor">
+                        </div>
+                        <span>Taylor (USA) 🇺🇸</span>
+                    </div>
+                    <div class="character-option" data-character="robot">
+                        <div class="character-preview robot">
+                            <img src="assets/characters/icon 2.jpg" alt="Character 2">
+                        </div>
+                        <span>Fairuz (Lebanon) 🇱🇧</span>
+                    </div>
+                    <div class="character-option" data-character="alien">
+                        <div class="character-preview alien">
+                            <img src="assets/characters/icon 3.jpg" alt="Character 3">
+                        </div>
+                        <span>Olivia (Philippines) 🇵🇭</span>
+                    </div>
+                    <div class="character-option" data-character="explorer">
+                        <div class="character-preview explorer">
+                            <img src="assets/characters/icon 4.jpg" alt="Character 4">
+                        </div>
+                        <span>Akira (Japan) 🇯🇵</span>
+                    </div>
+                    <div class="character-option" data-character="hellokitty">
+                        <div class="character-preview hellokitty">
+                            <img src="assets/characters/hellokityyyy.png" alt="Hello Kitty">
+                        </div>
+                        <span>Hello Kitty 🎀</span>
+                    </div>
+                    <div class="character-option" data-character="blondie">
+                        <div class="character-preview blondie">
+                            <img src="assets/characters/blondie.png" alt="Elsie">
+                        </div>
+                        <span>Elsie 👱‍♀️</span>
+                    </div>
+                    <div class="character-option" data-character="rory">
+                        <div class="character-preview rory">
+                            <img src="assets/characters/rory.png" alt="Rory">
+                        </div>
+                        <span>Rory 🌟</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="customization-section">
+                <h3>Choose Background Theme</h3>
+                <div class="background-options">
+                    <div class="bg-option" data-bg="space">
+                        <div class="bg-preview space-bg"></div>
+                        <span>Space</span>
+                    </div>
+                    <div class="bg-option" data-bg="galaxy">
+                        <div class="bg-preview galaxy-bg"></div>
+                        <span>Galaxy</span>
+                    </div>
+                    <div class="bg-option" data-bg="nebula">
+                        <div class="bg-preview nebula-bg"></div>
+                        <span>Nebula</span>
+                    </div>
+                    <div class="bg-option" data-bg="cosmos">
+                        <div class="bg-preview cosmos-bg"></div>
+                        <span>Cosmos</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="nextToMusicBtn" class="start-btn">Next: Choose Music</button>
+        </div>
+    </div>
+
+    <!-- Music Selection Screen -->
+    <div id="musicSelectionScreen" class="screen">
+        <div class="customization-container">
+            <h2>Choose Your Background Music</h2>
+            <p>Select the soundtrack for your adventure!</p>
+            
+            <div class="customization-section">
+                <div class="music-options">
+                    <div class="music-option" data-music="taylor">
+                        <div class="music-preview">
+                            <span class="music-icon">🎵</span>
+                        </div>
+                        <div class="music-info">
+                            <span class="music-title">Taylor Swift</span>
+                            <span class="music-desc">Welcome to New York</span>
+                        </div>
+                    </div>
+                    <div class="music-option" data-music="olivia">
+                        <div class="music-preview">
+                            <span class="music-icon">🎸</span>
+                        </div>
+                        <div class="music-info">
+                            <span class="music-title">Olivia Rodrigo</span>
+                            <span class="music-desc">Teenage Dream</span>
+                        </div>
+                    </div>
+                    <div class="music-option" data-music="theme">
+                        <div class="music-preview">
+                            <span class="music-icon">🎼</span>
+                        </div>
+                        <div class="music-info">
+                            <span class="music-title">Gilmore Girls</span>
+                            <span class="music-desc">Classic Theme</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="startGameBtn" class="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-ui">
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Player:</span>
+                    <span id="displayPlayerName">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Team:</span>
+                    <span id="displayTeamInfo">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Lives:</span>
+                    <div id="lives" class="lives-container">
+                        <img class="heart" src="assets/characters/icon 5.jpg" alt="Life">
+                        <img class="heart" src="assets/characters/icon 5.jpg" alt="Life">
+                        <img class="heart" src="assets/characters/icon 5.jpg" alt="Life">
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Stars:</span>
+                    <span id="starsCollected">0</span>
+                </div>
+            </div>
+            
+            <button id="pauseBtn" class="control-btn">Pause</button>
+        </div>
+        
+        <canvas id="gameCanvas"></canvas>
+        
+    <div class="controls-hint">
+        <p>← → Move | SPACE Jump (2x for double) | SHIFT Dash | ESC Pause</p>
+    </div>
+    </div>
+
+    <!-- Question Modal -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <h3>Tech Question!</h3>
+            <p id="questionText"></p>
+            <div id="answerOptions" class="answer-options"></div>
+            <div id="questionFeedback" class="feedback"></div>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2 id="gameOverTitle">Game Over!</h2>
+            <p id="finalScore"></p>
+            <p id="starsInfo"></p>
+            <button id="restartBtn" class="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Pause Menu -->
+    <div id="pauseMenu" class="modal">
+        <div class="modal-content">
+            <h2>Game Paused</h2>
+            <button id="resumeBtn" class="menu-btn">Resume</button>
+            <button id="restartFromPause" class="menu-btn">Restart</button>
+            <button id="quitBtn" class="menu-btn">Quit to Menu</button>
+        </div>
+    </div>
+
+    <!-- Coding Challenge Modal -->
+    <div id="codingModal" class="modal coding-modal">
+        <div class="modal-content coding-content">
+            <div class="coding-header">
+                <div class="challenge-info">
+                    <h3 id="challengeTitle">🚀 Coding Challenge</h3>
+                    <span id="challengeCategory" class="challenge-category">Algorithms</span>
+                </div>
+                <div class="coding-timer">
+                    <span id="codingTimer" class="timer-display">⏱️ 2:00</span>
+                </div>
+            </div>
+            
+            <div id="challengeDescription" class="challenge-description">
+                Write your solution below...
+            </div>
+            
+            <div class="coding-workspace">
+                <div class="code-editor-section">
+                    <div class="editor-header">
+                        <span>📝 Code Editor</span>
+                        <span id="challengePoints" class="challenge-points">+200 Points</span>
+                    </div>
+                    <textarea id="codeEditor" class="code-editor" spellcheck="false"></textarea>
+                </div>
+                
+                <div class="output-section">
+                    <div class="editor-header">
+                        <span>💻 Output</span>
+                        <button id="runCodeBtn" class="run-btn">▶️ Run Code</button>
+                    </div>
+                    <div id="codeOutput" class="code-output"></div>
+                </div>
+            </div>
+            
+            <div class="coding-actions">
+                <button id="submitCodeBtn" class="submit-btn">✅ Submit Solution</button>
+                <button id="skipChallengeBtn" class="skip-btn">⏭️ Skip Challenge</button>
+            </div>
+            
+            <div id="codingFeedback" class="coding-feedback"></div>
+        </div>
+    </div>
+
+    <script src="assetConfig.js"></script>
+    <script src="musicManager.js"></script>
+    <script src="customQuestions.js"></script>
+    <script src="questions.js"></script>
+    <script src="codingChallenges.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
