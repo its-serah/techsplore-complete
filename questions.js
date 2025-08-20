@@ -1,5 +1,7 @@
 // TechSplore Questions Database
 // Questions organized by difficulty level
+console.log('🔄 QUESTIONS.JS LOADED - VERSION 2.0 - UPDATED ADVANCED QUESTIONS!');
+console.log('🚀 Advanced questions include: Mistral AI, FastAPI, Docker, SDLC & DevOps');
 
 // BEGINNER LEVEL QUESTIONS
 const BEGINNER_QUESTIONS = [
