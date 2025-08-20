@@ -1,77 +1,12 @@
 // TechSplore Questions Database
 // Questions organized by difficulty level
-console.log('🔄 QUESTIONS.JS LOADED - VERSION 2.0 - UPDATED ADVANCED QUESTIONS!');
-console.log('🚀 Advanced questions include: Mistral AI, FastAPI, Docker, SDLC & DevOps');
+console.log('🔄 QUESTIONS.JS LOADED - VERSION 3.0 - NO MORE HTML QUESTIONS!');
+console.log('🎮 BEGINNER: Prompt Engineering, Block-based ML, Cultural AI, Ethics, Basic Mistral/FastAPI/Docker');
+console.log('🚀 ADVANCED: Your exact Mistral AI, FastAPI, SDLC & DevOps, Docker questions!');
+console.log('✅ REMOVED: All HTML/CSS/JavaScript basic questions from beginner track');
 
-// BEGINNER LEVEL QUESTIONS
+// BEGINNER LEVEL QUESTIONS - HACKATHON SPECIFIC CONTENT ONLY
 const BEGINNER_QUESTIONS = [
-    // EXAMPLE FORMAT:
-    {
-        question: "What does HTML stand for?",
-        options: [
-            "Hyper Text Markup Language",
-            "High Tech Modern Language", 
-            "Home Tool Markup Language",
-            "Hyperlinks and Text Markup Language"
-        ],
-        correct: 0,  // Index of correct answer (0 = first option)
-        category: "Web Development",
-        difficulty: "easy",
-        points: 100
-    },
-    
-    // ADD YOUR QUESTIONS BELOW THIS LINE:
-    // Copy the format above and modify with your questions
-    
-    {
-        question: "Which programming language is known as the 'language of the web'?",
-        options: ["Python", "Java", "JavaScript", "C++"],
-        correct: 2,
-        category: "Programming",
-        difficulty: "easy",
-        points: 100
-    },
-    
-    {
-        question: "What does CSS stand for?",
-        options: [
-            "Computer Style Sheets",
-            "Creative Style Sheets",
-            "Cascading Style Sheets",
-            "Colorful Style Sheets"
-        ],
-        correct: 2,
-        category: "Web Development",
-        difficulty: "easy",
-        points: 100
-    },
-    
-    // ADD MORE QUESTIONS HERE:
-    // You can add as many questions as you want!
-    // Just follow the same format
-    
-    {
-        question: "What is the purpose of the 'useEffect' hook in React?",
-        options: [
-            "To manage component state",
-            "To handle side effects in functional components",
-            "To create custom hooks",
-            "To render JSX elements"
-        ],
-        correct: 1,
-        category: "React",
-        difficulty: "easy",
-        points: 120
-    },
-    
-    {
-        question: "Which of the following is NOT a primitive data type in JavaScript?",
-        options: ["string", "boolean", "array", "number"],
-        correct: 2,
-        category: "JavaScript",
-        difficulty: "easy",
-        points: 100
-    },
     
     // BEGINNER TRACK - PROMPT ENGINEERING
     {
