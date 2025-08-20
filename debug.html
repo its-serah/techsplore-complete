@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug TechSplore</title>
+</head>
+<body>
+    <h1>Debug TechSplore Buttons</h1>
+    
+    <div id="welcomeScreen" class="screen active">
+        <div class="user-info">
+            <input type="text" id="playerName" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="difficulty-buttons">
+            <button id="beginnerBtn" class="start-game-btn beginner-btn">🎮 Start Game for Beginners</button>
+            <button id="advancedBtn" class="start-game-btn advanced-btn">🚀 Advanced Challenge Mode</button>
+        </div>
+    </div>
+
+    <div id="customizationScreen" class="screen" style="display: none;">
+        <h2>Customization Screen</h2>
+        <p>Success! You reached the customization screen.</p>
+    </div>
+
+    <script>
+        // Simple debug script
+        console.log('Debug script starting...');
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded');
+            
+            const beginnerBtn = document.getElementById('beginnerBtn');
+            const advancedBtn = document.getElementById('advancedBtn');
+            
+            console.log('Beginner button:', beginnerBtn);
+            console.log('Advanced button:', advancedBtn);
+            
+            function validateUserInfo() {
+                const playerName = document.getElementById('playerName').value.trim();
+                console.log('Player name:', playerName);
+                
+                if (!playerName) {
+                    alert('Please enter your full name!');
+                    return false;
+                }
+                return true;
+            }
+            
+            function showCustomizationScreen() {
+                console.log('Showing customization screen');
+                document.getElementById('welcomeScreen').style.display = 'none';
+                document.getElementById('customizationScreen').style.display = 'block';
+            }
+            
+            if (beginnerBtn) {
+                beginnerBtn.addEventListener('click', () => {
+                    console.log('Beginner button clicked');
+                    if (validateUserInfo()) {
+                        console.log('Validation passed');
+                        showCustomizationScreen();
+                    } else {
+                        console.log('Validation failed');
+                    }
+                });
+            }
+            
+            if (advancedBtn) {
+                advancedBtn.addEventListener('click', () => {
+                    console.log('Advanced button clicked');
+                    if (validateUserInfo()) {
+                        console.log('Validation passed');
+                        showCustomizationScreen();
+                    } else {
+                        console.log('Validation failed');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

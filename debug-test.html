@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test - Button Navigation</title>
+    <style>
+        .screen {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            border: 2px solid #333;
+        }
+        
+        .screen.active {
+            display: flex;
+        }
+        
+        .container {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        
+        .debug-info {
+            background: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <div class="container">
+            <h1>Debug Test - Welcome Screen</h1>
+            <div class="debug-info">
+                <div>Screen ID: welcomeScreen</div>
+                <div>Current classes: <span id="welcomeClasses">-</span></div>
+            </div>
+            
+            <input type="text" id="playerName" placeholder="Enter your name" value="Test Player">
+            
+            <div>
+                <button id="beginnerBtn">Beginner Mode</button>
+                <button id="advancedBtn">Advanced Mode</button>
+            </div>
+            
+            <div class="debug-info">
+                <div>Beginner button found: <span id="beginnerFound">-</span></div>
+                <div>Advanced button found: <span id="advancedFound">-</span></div>
+                <div>Player name input found: <span id="nameFound">-</span></div>
+                <div>Customization screen found: <span id="customFound">-</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customization Screen -->
+    <div id="customizationScreen" class="screen">
+        <div class="container">
+            <h1>Debug Test - Customization Screen</h1>
+            <div class="debug-info">
+                <div>Screen ID: customizationScreen</div>
+                <div>Current classes: <span id="customClasses">-</span></div>
+            </div>
+            
+            <p>🎉 Navigation worked! You successfully reached the customization screen.</p>
+            
+            <button onclick="goBack()">Go Back to Welcome</button>
+        </div>
+    </div>
+
+    <script>
+        console.log('🔍 Debug script starting...');
+        
+        function updateDebugInfo() {
+            // Update class information
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const customScreen = document.getElementById('customizationScreen');
+            
+            if (welcomeScreen) {
+                document.getElementById('welcomeClasses').textContent = welcomeScreen.className;
+            }
+            if (customScreen) {
+                document.getElementById('customClasses').textContent = customScreen.className;
+            }
+        }
+        
+        function validateUserInfo() {
+            const playerName = document.getElementById('playerName').value.trim();
+            console.log('🔍 Validating user info. Player name:', playerName);
+            
+            if (!playerName) {
+                alert('Please enter your name!');
+                return false;
+            }
+            return true;
+        }
+        
+        function showCustomizationScreen() {
+            console.log('🔍 showCustomizationScreen called');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const customizationScreen = document.getElementById('customizationScreen');
+            
+            console.log('🔍 Welcome screen element:', welcomeScreen);
+            console.log('🔍 Customization screen element:', customizationScreen);
+            
+            if (welcomeScreen) {
+                console.log('🔍 Removing active class from welcome screen');
+                welcomeScreen.classList.remove('active');
+                console.log('🔍 Welcome screen classes after removal:', welcomeScreen.className);
+            } else {
+                console.error('❌ Welcome screen element not found!');
+            }
+            
+            if (customizationScreen) {
+                console.log('🔍 Adding active class to customization screen');
+                customizationScreen.classList.add('active');
+                console.log('🔍 Customization screen classes after addition:', customizationScreen.className);
+            } else {
+                console.error('❌ Customization screen element not found!');
+            }
+            
+            updateDebugInfo();
+        }
+        
+        function goBack() {
+            console.log('🔍 Going back to welcome screen');
+            const welcomeScreen = document.getElementById('welcomeScreen');
+            const customizationScreen = document.getElementById('customizationScreen');
+            
+            if (customizationScreen) {
+                customizationScreen.classList.remove('active');
+            }
+            if (welcomeScreen) {
+                welcomeScreen.classList.add('active');
+            }
+            
+            updateDebugInfo();
+        }
+        
+        function setupEventListeners() {
+            console.log('🔍 Setting up event listeners...');
+            
+            const beginnerBtn = document.getElementById('beginnerBtn');
+            const advancedBtn = document.getElementById('advancedBtn');
+            const playerNameInput = document.getElementById('playerName');
+            const customScreen = document.getElementById('customizationScreen');
+            
+            // Update debug info
+            document.getElementById('beginnerFound').textContent = beginnerBtn ? 'YES' : 'NO';
+            document.getElementById('advancedFound').textContent = advancedBtn ? 'YES' : 'NO';
+            document.getElementById('nameFound').textContent = playerNameInput ? 'YES' : 'NO';
+            document.getElementById('customFound').textContent = customScreen ? 'YES' : 'NO';
+            
+            if (beginnerBtn) {
+                console.log('🔍 Adding event listener to beginner button');
+                beginnerBtn.addEventListener('click', () => {
+                    console.log('🔍 Beginner button clicked!');
+                    if (validateUserInfo()) {
+                        console.log('🔍 Validation passed, showing customization screen');
+                        showCustomizationScreen();
+                    } else {
+                        console.log('🔍 Validation failed');
+                    }
+                });
+            } else {
+                console.error('❌ Beginner button not found!');
+            }
+            
+            if (advancedBtn) {
+                console.log('🔍 Adding event listener to advanced button');
+                advancedBtn.addEventListener('click', () => {
+                    console.log('🔍 Advanced button clicked!');
+                    if (validateUserInfo()) {
+                        console.log('🔍 Validation passed, showing customization screen');
+                        showCustomizationScreen();
+                    } else {
+                        console.log('🔍 Validation failed');
+                    }
+                });
+            } else {
+                console.error('❌ Advanced button not found!');
+            }
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🔍 DOM loaded, initializing...');
+            setupEventListeners();
+            updateDebugInfo();
+        });
+        
+        // Also try immediate setup in case DOMContentLoaded already fired
+        if (document.readyState === 'loading') {
+            console.log('🔍 Document still loading, waiting for DOMContentLoaded');
+        } else {
+            console.log('🔍 Document already loaded, setting up immediately');
+            setupEventListeners();
+            updateDebugInfo();
+        }
+    </script>
+</body>
+</html>

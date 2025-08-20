@@ -132,26 +132,79 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function setupEventListeners() {
-    // Welcome Screen - Both difficulty modes
-    document.getElementById('beginnerBtn').addEventListener('click', () => {
-        if (validateUserInfo()) {
-            gameState.difficulty = 'beginner';
-            gameSpeed = 2; // Beginner speed
-            setQuestionsForDifficulty('beginner');
-            showDifficultyInfo('beginner');
-            showCustomizationScreen();
-        }
-    });
+    console.log('Setting up event listeners...');
+    console.log('Document ready state:', document.readyState);
+    console.log('DOM loaded:', document.readyState === 'complete');
     
-    document.getElementById('advancedBtn').addEventListener('click', () => {
-        if (validateUserInfo()) {
-            gameState.difficulty = 'advanced';
-            gameSpeed = 3.5; // Faster speed for advanced
-            setQuestionsForDifficulty('advanced');
-            showDifficultyInfo('advanced');
-            showCustomizationScreen();
-        }
-    });
+    // Welcome Screen - Both difficulty modes
+    const beginnerBtn = document.getElementById('beginnerBtn');
+    const advancedBtn = document.getElementById('advancedBtn');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const customizationScreen = document.getElementById('customizationScreen');
+    
+    console.log('Elements found:');
+    console.log('- Beginner button:', beginnerBtn);
+    console.log('- Advanced button:', advancedBtn);
+    console.log('- Welcome screen:', welcomeScreen);
+    console.log('- Customization screen:', customizationScreen);
+    
+    if (beginnerBtn) {
+        console.log('✅ Adding click listener to beginner button');
+        beginnerBtn.addEventListener('click', (event) => {
+            console.log('🎮 Beginner button clicked!');
+            console.log('Event object:', event);
+            console.log('Event target:', event.target);
+            
+            try {
+                if (validateUserInfo()) {
+                    console.log('✅ Validation passed, proceeding...');
+                    gameState.difficulty = 'beginner';
+                    gameSpeed = 2;
+                    setQuestionsForDifficulty('beginner');
+                    showDifficultyInfo('beginner');
+                    
+                    console.log('🎯 About to call showCustomizationScreen()');
+                    showCustomizationScreen();
+                    console.log('✅ showCustomizationScreen() completed');
+                } else {
+                    console.log('❌ Validation failed');
+                }
+            } catch (error) {
+                console.error('❌ Error in beginner button handler:', error);
+            }
+        });
+    } else {
+        console.error('❌ Beginner button not found!');
+    }
+    
+    if (advancedBtn) {
+        console.log('✅ Adding click listener to advanced button');
+        advancedBtn.addEventListener('click', (event) => {
+            console.log('🚀 Advanced button clicked!');
+            console.log('Event object:', event);
+            console.log('Event target:', event.target);
+            
+            try {
+                if (validateUserInfo()) {
+                    console.log('✅ Validation passed, proceeding...');
+                    gameState.difficulty = 'advanced';
+                    gameSpeed = 3.5;
+                    setQuestionsForDifficulty('advanced');
+                    showDifficultyInfo('advanced');
+                    
+                    console.log('🎯 About to call showCustomizationScreen()');
+                    showCustomizationScreen();
+                    console.log('✅ showCustomizationScreen() completed');
+                } else {
+                    console.log('❌ Validation failed');
+                }
+            } catch (error) {
+                console.error('❌ Error in advanced button handler:', error);
+            }
+        });
+    } else {
+        console.error('❌ Advanced button not found!');
+    }
 
     // Customization Screen
     document.querySelectorAll('.character-option').forEach(option => {
@@ -250,8 +303,26 @@ function validateUserInfo() {
 }
 
 function showCustomizationScreen() {
-    document.getElementById('welcomeScreen').classList.remove('active');
-    document.getElementById('customizationScreen').classList.add('active');
+    console.log('showCustomizationScreen called');
+    const welcomeScreen = document.getElementById('welcomeScreen');
+    const customizationScreen = document.getElementById('customizationScreen');
+    
+    console.log('Welcome screen element:', welcomeScreen);
+    console.log('Customization screen element:', customizationScreen);
+    
+    if (welcomeScreen) {
+        welcomeScreen.classList.remove('active');
+        console.log('Removed active class from welcome screen');
+    } else {
+        console.error('Welcome screen element not found!');
+    }
+    
+    if (customizationScreen) {
+        customizationScreen.classList.add('active');
+        console.log('Added active class to customization screen');
+    } else {
+        console.error('Customization screen element not found!');
+    }
 }
 
 function showMusicSelectionScreen() {

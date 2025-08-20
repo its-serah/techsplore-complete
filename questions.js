@@ -266,254 +266,206 @@ const BEGINNER_QUESTIONS = [
 
 // Advanced Questions for experienced developers
 const ADVANCED_QUESTIONS = [
+    // MISTRAL AI QUESTIONS
     {
-        question: "What is the time complexity of inserting an element at the beginning of a dynamic array?",
-        options: ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+        question: "In a requests.post() call to the Mistral AI API, which element of the request is responsible for specifying the target model and instructions?",
+        options: ["URL", "Headers", "Body", "API Key"],
         correct: 2,
-        category: "Data Structures",
+        category: "Mistral AI",
+        difficulty: "medium",
+        points: 200
+    },
+    
+    {
+        question: "To make your chatbot handle both cultural and history questions, which part of the code should you modify?",
+        options: ["The API endpoint URL", "The request headers", "The system role message", "The API key storage location"],
+        correct: 2,
+        category: "Mistral AI",
+        difficulty: "medium",
+        points: 200
+    },
+    
+    // FASTAPI QUESTIONS
+    {
+        question: "Which HTTP method in a FastAPI To-Do list application should be used to change a task's status from incomplete to complete?",
+        options: ["GET", "POST", "PUT", "DELETE"],
+        correct: 2,
+        category: "FastAPI",
+        difficulty: "medium",
+        points: 200
+    },
+    
+    {
+        question: "Which feature of FastAPI allows it to serve many requests at once without blocking?",
+        options: ["ORM integration", "Asynchronous support", "Auto-generated HTML pages", "WebSocket support"],
+        correct: 1,
+        category: "FastAPI",
+        difficulty: "medium",
+        points: 200
+    },
+    
+    {
+        question: "What is one main advantage of building your own FastAPI backend instead of relying on a hosted model API?",
+        options: ["Free hosting from FastAPI", "Built-in pre-trained models", "Full control over backend logic and deployment", "Requires no coding"],
+        correct: 2,
+        category: "FastAPI",
+        difficulty: "medium",
+        points: 220
+    },
+    
+    {
+        question: "What documentation tools does FastAPI provide by default?",
+        options: ["Swagger UI & ReDoc", "Postman Collections", "Markdown Pages", "Jupyter Notebooks"],
+        correct: 0,
+        category: "FastAPI",
+        difficulty: "medium",
+        points: 180
+    },
+    
+    // SDLC AND DEVOPS QUESTIONS
+    {
+        question: "Why can software projects still fail even if the code runs correctly?",
+        options: ["Lack of comments in the code", "Weak processes and changing requirements", "Too many developers", "Old programming languages"],
+        correct: 1,
+        category: "SDLC & DevOps",
+        difficulty: "medium",
+        points: 210
+    },
+    
+    {
+        question: "Which statement correctly matches each term? Design Pattern: Common solution for recurring design issues. Design Principle: Guideline for writing clean, maintainable code. System Architecture: Overall structure and interaction of components.",
+        options: [
+            "Pattern = structure, Principle = recurring issue, Architecture = coding style",
+            "Pattern = recurring issue, Principle = clean code, Architecture = overall structure",
+            "Pattern = coding style, Principle = structure, Architecture = recurring problem",
+            "Pattern = recurring problem, Principle = coding syntax, Architecture = component list"
+        ],
+        correct: 1,
+        category: "SDLC & DevOps",
         difficulty: "hard",
         points: 250
     },
     
     {
-        question: "In a Binary Search Tree, what is the average time complexity for search operations?",
-        options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+        question: "Which of the following best demonstrates applying a DevOps practice to a project?",
+        options: [
+            "Writing global variables for quick access",
+            "Automating deployment and running unit tests on every commit",
+            "Using the same password for all servers",
+            "Hardcoding API keys in the code"
+        ],
         correct: 1,
-        category: "Algorithms",
-        difficulty: "hard",
-        points: 300
+        category: "SDLC & DevOps",
+        difficulty: "medium",
+        points: 230
     },
     
+    // DOCKER QUESTIONS
     {
-        question: "Which design pattern ensures a class has only one instance and provides global access to it?",
-        options: ["Factory Pattern", "Observer Pattern", "Singleton Pattern", "Strategy Pattern"],
-        correct: 2,
-        category: "Design Patterns",
+        question: "What does containerization achieve?",
+        options: [
+            "Runs multiple operating systems on a single virtual machine",
+            "Packages an application with its dependencies into a portable unit",
+            "Encrypts source code automatically",
+            "Stores container data in the cloud by default"
+        ],
+        correct: 1,
+        category: "Docker",
         difficulty: "medium",
         points: 200
     },
     
     {
-        question: "What does 'ACID' stand for in database transactions?",
+        question: "Which is TRUE about containers compared to VMs?",
         options: [
-            "Atomicity, Consistency, Isolation, Durability",
-            "Accuracy, Consistency, Integrity, Dependability",
-            "Availability, Consistency, Isolation, Distribution",
-            "Atomicity, Coherence, Independence, Durability"
+            "Containers always include their own OS kernel",
+            "Containers share the host OS kernel and start faster than VMs",
+            "Containers require more RAM than VMs",
+            "Containers run without an operating system"
         ],
-        correct: 0,
-        category: "Database Systems",
+        correct: 1,
+        category: "Docker",
         difficulty: "medium",
         points: 220
     },
     
     {
-        question: "In Big O notation, which of these represents the fastest growing function?",
-        options: ["O(2^n)", "O(n!)", "O(n²)", "O(n log n)"],
+        question: "In Docker, what does docker build -t user/app:1.0 . do?",
+        options: [
+            "Tags an existing container as 1.0",
+            "Builds an image from the current directory and tags it",
+            "Pushes an image to Docker Hub",
+            "Starts a container in detached mode"
+        ],
         correct: 1,
-        category: "Algorithm Complexity",
-        difficulty: "hard",
-        points: 280
-    },
-    
-    {
-        question: "What is the main advantage of using a Hash Table over a Binary Search Tree?",
-        options: [
-            "Better worst-case performance",
-            "Maintains sorted order",
-            "Better average-case performance for lookups",
-            "Uses less memory"
-        ],
-        correct: 2,
-        category: "Data Structures",
-        difficulty: "medium",
-        points: 240
-    },
-    
-    {
-        question: "Which of the following is true about microservices architecture?",
-        options: [
-            "All services must use the same programming language",
-            "Services should share the same database",
-            "Each service should be independently deployable",
-            "Services must communicate only through REST APIs"
-        ],
-        correct: 2,
-        category: "System Architecture",
+        category: "Docker",
         difficulty: "medium",
         points: 210
     },
     
     {
-        question: "What is the purpose of the CAP theorem in distributed systems?",
+        question: "In docker run -p 8080:8000 image, what does -p 8080:8000 do?",
         options: [
-            "It defines how to scale databases horizontally",
-            "It states you can only guarantee 2 out of 3: Consistency, Availability, Partition tolerance",
-            "It explains how to implement caching strategies",
-            "It describes load balancing techniques"
+            "Maps container port 8080 to host 8000",
+            "Maps host port 8080 to container port 8000",
+            "Opens port 8080 internally only",
+            "Publishes port 8000 on all networks"
         ],
         correct: 1,
-        category: "Distributed Systems",
-        difficulty: "hard",
-        points: 320
-    },
-    
-    {
-        question: "In functional programming, what is a 'pure function'?",
-        options: [
-            "A function that only uses built-in operators",
-            "A function with no side effects that always returns the same output for the same input",
-            "A function that doesn't use any variables",
-            "A function written in a functional programming language"
-        ],
-        correct: 1,
-        category: "Functional Programming",
+        category: "Docker",
         difficulty: "medium",
-        points: 190
+        points: 200
     },
     
     {
-        question: "What is the difference between 'git merge' and 'git rebase'?",
+        question: "Which command shows only running containers?",
+        options: ["docker images", "docker ps", "docker ps -a", "docker service ls"],
+        correct: 1,
+        category: "Docker",
+        difficulty: "easy",
+        points: 150
+    },
+    
+    {
+        question: "A Docker image is best described as…",
         options: [
-            "There is no difference, they do the same thing",
-            "Merge creates a merge commit, rebase rewrites commit history",
-            "Rebase only works with remote branches",
-            "Merge is faster than rebase"
+            "A running process inside a container",
+            "A read-only template used to create containers",
+            "A container network definition",
+            "An image of the container's UI"
         ],
         correct: 1,
-        category: "Version Control",
+        category: "Docker",
         difficulty: "medium",
         points: 180
     },
     
     {
-        question: "Which sorting algorithm has the best average-case time complexity?",
-        options: ["Bubble Sort", "Quick Sort", "Insertion Sort", "Selection Sort"],
-        correct: 1,
-        category: "Sorting Algorithms",
-        difficulty: "medium",
-        points: 200
-    },
-    
-    {
-        question: "What is the primary benefit of using Docker containers?",
+        question: "In a Dockerfile, what does EXPOSE 5000 do?",
         options: [
-            "Faster code execution",
-            "Better security",
-            "Application portability and consistency across environments",
-            "Reduced memory usage"
-        ],
-        correct: 2,
-        category: "DevOps",
-        difficulty: "medium",
-        points: 160
-    },
-    
-    {
-        question: "In object-oriented programming, what does the 'L' in SOLID principles stand for?",
-        options: [
-            "Low Coupling",
-            "Liskov Substitution Principle",
-            "Linear Responsibility",
-            "Lazy Loading"
+            "Automatically publishes port 5000",
+            "Documents the intended port for the container",
+            "Blocks external access to port 5000",
+            "Creates a firewall rule"
         ],
         correct: 1,
-        category: "OOP Principles",
+        category: "Docker",
         difficulty: "medium",
-        points: 220
+        points: 190
     },
     
     {
-        question: "What is the space complexity of the merge sort algorithm?",
-        options: ["O(1)", "O(log n)", "O(n)", "O(n²)"],
-        correct: 2,
-        category: "Algorithm Complexity",
+        question: "What will the following command do? docker service create --name hello --replicas 3 --publish 80:8000 user/hello:1.0",
+        options: [
+            "Creates a service with 3 replicas and publishes port 80 to container port 8000",
+            "Builds the image and uploads it to Docker Hub",
+            "Runs a single container only on the manager node",
+            "Only exposes port 8000 on localhost"
+        ],
+        correct: 0,
+        category: "Docker",
         difficulty: "hard",
-        points: 260
-    },
-    
-    {
-        question: "Which of these is NOT a characteristic of REST API design?",
-        options: [
-            "Stateless communication",
-            "Uniform interface",
-            "Persistent connections required",
-            "Client-server architecture"
-        ],
-        correct: 2,
-        category: "API Design",
-        difficulty: "medium",
-        points: 190
-    },
-    
-    {
-        question: "What is the main purpose of a reverse proxy?",
-        options: [
-            "To hide client IP addresses",
-            "To cache responses and distribute load to backend servers",
-            "To encrypt network traffic",
-            "To compress data transfers"
-        ],
-        correct: 1,
-        category: "Network Architecture",
-        difficulty: "medium",
-        points: 210
-    },
-    
-    {
-        question: "In machine learning, what is 'overfitting'?",
-        options: [
-            "When a model is too simple",
-            "When a model performs well on training data but poorly on new data",
-            "When training takes too long",
-            "When the dataset is too large"
-        ],
-        correct: 1,
-        category: "Machine Learning",
-        difficulty: "medium",
-        points: 230
-    },
-    
-    {
-        question: "What is the primary difference between SQL and NoSQL databases?",
-        options: [
-            "NoSQL is always faster",
-            "SQL databases have fixed schemas, NoSQL databases are schema-flexible",
-            "SQL databases can't handle large amounts of data",
-            "NoSQL databases don't support queries"
-        ],
-        correct: 1,
-        category: "Database Systems",
-        difficulty: "medium",
-        points: 170
-    },
-    
-    {
-        question: "In cybersecurity, what does 'SQL injection' attack?",
-        options: [
-            "Network protocols",
-            "Database queries through user input",
-            "File system permissions",
-            "Memory allocation"
-        ],
-        correct: 1,
-        category: "Cybersecurity",
-        difficulty: "medium",
-        points: 200
-    },
-    
-    {
-        question: "What is the main advantage of using GraphQL over REST?",
-        options: [
-            "Better security",
-            "Faster execution",
-            "Clients can request exactly the data they need",
-            "Easier to implement"
-        ],
-        correct: 2,
-        category: "API Technologies",
-        difficulty: "medium",
-        points: 190
+        points: 280
     }
 ];
 
